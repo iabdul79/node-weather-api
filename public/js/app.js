@@ -3,7 +3,7 @@ const input = document.querySelector('input')
 const message = document.querySelector('p')
 
 const fetchWeather = (location) => {
-  fetch(`http://localhost:3000/weather?address=${location}`).then(res => {
+  fetch(`/weather?address=${location}`).then(res => {
     res.json().then(body => {
       if (body.error) {
         console.error(body.error)

@@ -5,6 +5,7 @@ const {getGeoLocation} = require('./utils/geo-api')
 const {getWeather} = require('./utils/forecast-api')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // paths for express config
 const staticDirectory = path.join(__dirname, '../public')
@@ -74,4 +75,4 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => console.log('Running on port 3000'))
+app.listen(port, () => console.log(`Running on port ${port}.`))
